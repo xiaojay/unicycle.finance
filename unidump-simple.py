@@ -24,4 +24,4 @@ query {
 '''
 
 response = requests.post(url,json={'query': data})
-print(response.content)
+print(response.content.decode('u8'))

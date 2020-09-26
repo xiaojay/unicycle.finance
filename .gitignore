@@ -1,0 +1,7 @@
+venv
+uni_venv
+*.sqlite3
+dump.rdb
+__pycache__
+.vscode
+
