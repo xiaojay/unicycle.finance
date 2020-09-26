@@ -1,12 +1,18 @@
 import requests
-import json
+import json, sys
 import datetime
 
 def display_date(t):
   return datetime.datetime.fromtimestamp(t).strftime('%Y-%m-%d')
 
 url = 'https://api.thegraph.com/subgraphs/name/ianlapham/uniswapv2'
-token_address = "0x6b175474e89094c44da98b954eedeac495271d0f"
+
+if len(sys.argv)==2:
+  token_address = sys.argv[1]
+else:
+  token_address = "0x6b175474e89094c44da98b954eedeac495271d0f"
+print(token_address)
+
 data = '''
 query {
   tokenDayDatas(orderBy: date, orderDirection: desc, first: 30
